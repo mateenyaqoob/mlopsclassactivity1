@@ -3,14 +3,22 @@ Building and Orchestrating a Simple ML Pipeline with Docker, Airflow, and Kubern
 
 
 This repository contains a minimal Machine Learning workflow with Docker, designed to help you practice the basics of MLOps, Airflow, and Kubernetes.
+
 Project Structure
 mlops-starter/
+
 │── preprocess.py        # Data preprocessing (Iris dataset → CSV)
+
 │── train.py             # Model training (Logistic Regression)
+
 │── app.py               # FastAPI app to serve predictions
+
 │── requirements.txt     # Python dependencies
+
 │── Dockerfile.train     # Dockerfile for preprocessing + training
+
 │── Dockerfile.serve     # Dockerfile for serving the model
+
 
 **Step 1: Preprocess & Train with Docker
 **

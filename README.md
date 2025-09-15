@@ -20,8 +20,8 @@ mlops-starter/
 │── Dockerfile.serve     # Dockerfile for serving the model
 
 
-**Step 1: Preprocess & Train with Docker
-**
+Step 1: Preprocess & Train with Docker
+
 Build training image
 docker build -f Dockerfile.train -t ml-train .
 
@@ -34,8 +34,8 @@ cleaned_iris.csv
 
 model.pkl
 
-**Step 2: Serve Model with FastAPI
-**
+Step 2: Serve Model with FastAPI
+
 Build serving image
 docker build -f Dockerfile.serve -t ml-api .
 
@@ -45,8 +45,9 @@ docker run -p 8000:8000 ml-api
 
 FastAPI server will start at → http://localhost:8000
 
-**Step 3: Test API Endpoint
-**
+
+Step 3: Test API Endpoint
+
 Send a test request:
 
 curl -X POST "http://localhost:8000/predict" \
@@ -58,8 +59,9 @@ Expected output:
 
 {"prediction": 0}
 
-**Step 4: Airflow Integration
-**
+
+Step 4: Airflow Integration
+
 Later, you will write an Airflow DAG (ml_pipeline.py) to automate:
 
 Run preprocess.py
@@ -70,15 +72,16 @@ Deploy app.py
 
 The DAG will orchestrate these steps instead of running them manually.
 
-**Step 5: Kubernetes Deployment
-**
+Step 5: Kubernetes Deployment
+
 Once trained, deploy app.py in Kubernetes:
 
 kubectl apply -f k8s-deployment.yaml
 kubectl get pods
 
-**Learning Outcomes
-**
+Learning Outcomes
+
+
 By using this repo, you will:
 
 Build & run Docker containers for ML workflows
